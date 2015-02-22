@@ -1,0 +1,259 @@
+---
+title: "Manual urgente de Rmarkdown"
+author: "MOOCR"
+date: "13/10/2014"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    number_sections: yes
+    toc: yes
+  word_document: default
+---
+Manual de Referencia rápido de Markdown 
+=======================
+
+R Markdown es un manera sencilla de  escribir  un 
+fichero de texto plano (vamos texto  sin formato)
+para crear documentos dinámicos e informes.
+Leed [Using R Markdown](http://rmarkdown.rstudio.com/) y 
+[Markdown Wikipedia](http://es.wikipedia.org/wiki/Markdown) para aprender más.
+
+**Enfasis**
+
+```
+*itálica*   **negrita**
+
+_itálica_   __negrita__
+```
+
+*itálica*   **negrita**
+
+_itálica_   __negrita__
+
+
+**Cabeceras**
+```
+# Cabecera 1
+
+## Cabecera 2
+
+### Cabecera 3
+```
+</div>
+<div id="cabecera-1" class="section level1">
+<h1>Cabecera 1</h1>
+<div id="cabecera-2" class="section level2">
+<h2>Cabecera 2</h2>
+<div id="cabecera-3" class="section level3">
+<h3>Cabecera 3</h3>
+
+**Listas**
+
+Listas No Ordenadas
+
+```
+* Ítem 1
+* Ítem 2
+    + Ítem 2a
+    + Item 2b
+```
+* Ítem 1
+* Ítem 2
+    + Ítem 2a
+    + Item 2b
+
+
+
+
+Listas Ordenadas
+```
+1. Ítem 1
+2. Ítem 2
+3. Ítem 3
+    + Ítem 3a
+    + Ítem 3b
+```
+
+1. Ítem 1
+2. Ítem 2
+3. Ítem 3
+    + Ítem 3a
+    + Ítem 3b
+
+
+**Cambio de linea manual**
+
+Acabar una linea con dos o más espacios:
+
+```
+Roses are red,   
+Violets are blue.
+```
+Roses are red,   
+Violets are blue.
+
+**Enlaces**
+
+Utilizad una dirección http plana o añadir un enlace a una frase:
+
+```
+http://example.com
+
+[buscad en la web de R-project](http://www.rptoject.org)
+```
+
+produce
+
+http://example.com
+
+[buscad en la web de R-project](http://www.rptoject.org)
+**Imágenes**
+
+Podemos añadir imágenes de la web o desde ficheros locales del directorio actual:
+```
+![alt text](http://example.com/logo.png)
+
+![alt text](figures/img.png)
+```
+
+
+
+**Trozos (chunks) de código R**
+
+El trozo de código de R es evaluado y  mostrado junto con los resultados
+
+```{r}
+summary(cars$dist)
+summary(cars$speed)
+```
+**Ejecutar código R dentro de una línea**
+
+<pre><code> El número de automóviles estudiados es &#96;r nrow(cars)&#96;.
+</code></pre>
+
+El número de automóviles estudiados es `r nrow(cars)`.
+
+
+**Bloques de código literal**
+
+Se pueden mostrar bloques de código de forma literal formateado como código y sin evaluar con
+
+```
+Este texto es mostrado  de forma literal/formateado como código.
+```
+
+**Código literal dentro de una linea de texto**
+
+Definimos la función `add` para calcular la suma de dos números.
+
+**Ecuaciones en modo matemático LaTeX**
+
+Ecuación en linea
+
+El código 
+
+`$\frac{x^2}{\sigma}$`
+
+produce
+
+$\frac{x^2}{\sigma}$
+
+Ecuación centrada entre párrafos
+
+El código 
+
+`$$\frac{x^2}{\sigma}$$`
+
+produce
+
+$$\frac{x^2}{\sigma}$$
+
+**Recta horizontal / Salto de página**
+
+Tres o más asteriscos o guiones:
+```
+******
+
+------
+```
+
+**Tablas**
+
+Las tablas en mark down son muy elementales. Veremos que con RMarkdown podemos generar tablas de datos más elegantes:
+
+La estructura básica es 
+```
+Primer Encabezado  | Segundo Encabezado  | Tercer Encabezado 
+------------------ | ------------------  | ------------------
+Casilla de contenido  | Casilla de contenido | Casilla de contenido
+Casilla de contenido  | Casilla de contenido | Casilla de contenido
+```
+que produce  la siguiente tabla:
+
+Primer Encabezado  | Segundo Encabezado  | Tercer Encabezado 
+------------------ | ------------------  | ------------------
+Casilla de contenido  | Casilla de contenido | Casilla de contenido
+Casilla de contenido  | Casilla de contenido | Casilla de contenido
+
+
+
+**Estilos de enlaces a referecias e imagenes**
+
+Enlaces con etiquetas
+
+El código 
+```
+
+Sitios en Internet sobre R [R-project][],
+[RHispano][] y [RStudio][].
+
+  [R-project]: http://r-project.com/        "R-project"
+  [RHispano]:  http://r-es.org/Comunidad  "http://r-es.org/Comunidad"
+  [Rstudio]:    http://rstudio.org/    "R Studio"
+```
+produce
+
+Sitios en Internet sobre R [R-project][],
+[RHispano][] y [RStudio][].
+
+  [R-project]: http://r-project.com/        "R-project"
+  [RHispano]:  http://r-es.org/Comunidad  "http://r-es.org/Comunidad"
+  [Rstudio]:    http://rstudio.org/    "R Studio"
+
+El código 
+```
+Véase el [dibujo][]
+
+[dibujo]: figures/plot.png "Gráfico de la función coseno"
+```
+produce
+
+Véase el [dibujo][]
+
+[dibujo]: figures/plot.png "Gráfico de la función coseno"
+
+
+
+
+
+
+**Miscelánea**
+
+```
+superíndice^2^
+~~frase tachada~~
+```
+producen
+
+superíndice^2^
+
+~~frase tachada~~
+
+*Signos tipográficos*
+
+Los caracteres ASCII se transforma en los caracteres tipográficos de HTML:
+Las comillas simple y doble ( `"` y `'` ) se transforma en  'comillas de comentario'.
+Los guiones  (`--` y  `---`) se transforman  en- guión corto y guión largo.
+
+Tres puntos consecutivos (`...`) se transforman en puntos suspensivos.
